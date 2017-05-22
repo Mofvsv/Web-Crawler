@@ -7,9 +7,22 @@ def get_next_target(page):
     end_quote = page.find('"', start_quote+1)
     url = page[start_quote+1:end_quote]
     return url, end_quote
-url, endpos = get_next_target('a href="good"')
+
+ url, endpos = get_next_target('a href="good"')
+
 print (get_next_target)
 if url:
     print ("Link")
 else:
     print ("No Link")
+
+## print links
+
+def print_all_links(page):
+    while True:
+        url, endpos = get_next_target(pae)
+        if url:
+            print url
+            page = Page[endpos: ]
+        else:
+            break
